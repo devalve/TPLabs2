@@ -13,6 +13,7 @@ namespace TPLabs2
         }
         protected void submitBtn_Click(object sender, EventArgs e)
         {
+
             try
             {
                 int first = int.Parse(firstVal.Text);
@@ -22,16 +23,16 @@ namespace TPLabs2
                 switch (operation.SelectedItem.Value)
                 {
                     case "+":
-                        Response.Write("<h1> Answer is " + (first + second) + "</h1>");
+                        Response.Redirect("Forms/Result.aspx?result=" + (first + second));
                         break;
                     case "-":
-                        Response.Write("<h1> Answer is <h1>" + (first - second) + "</h1>");
+                        Response.Write($"<h1> Answer is <h1> {(first - second)} </h1>");
                         break;
                     case "*":
-                        Response.Write("<h1> Answer is <h1>" + (first * second) + "</h1>");
+                        Response.Write($"<h1> Answer is <h1>{(first * second)}</h1>");
                         break;
                     case "/":
-                        Response.Write($"<h1> Answer is <h1> + {(first / second)}+ </h1>");
+                        Response.Write($"<h1> Answer is <h1>  {(first / second)}     </h1>");
                         break;
                 }
             }
@@ -40,11 +41,23 @@ namespace TPLabs2
             }
 
         }
-        protected void secondValidator_ServerValidate(object source, ServerValidateEventArgs args)
+        protected void SecondValidator_ServerValidate(object source, ServerValidateEventArgs args)
         {
             try
             {
                 double.Parse(secondVal.Text);
+            }
+            catch (Exception)
+            {
+                args.IsValid = false;
+            }
+
+        }
+        protected void FirstValidator_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            try
+            {
+                int.Parse(firstVal.Text);
             }
             catch (Exception)
             {
