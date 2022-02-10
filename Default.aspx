@@ -2,41 +2,75 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>
 
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
-        </div>
-    </div>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="text">First Val</label>
+
+                <asp:TextBox
+                    runat="server"
+                    ID="firstVal"
+                    name="text"
+                    class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="text2">Operation</label>
+                <asp:ListBox
+                    runat="server" ID="operation" name="text2" type="text" class="form-control">
+                    <asp:ListItem Value="+" />
+                    <asp:ListItem Value="-" />
+                    <asp:ListItem Value="*" />
+                    <asp:ListItem Value="/" />
+                </asp:ListBox>
+            </div>
+            <div class="form-group">
+
+                <label for="text1">Second Val</label>
+                <asp:TextBox
+                    runat="server"
+                    ID="secondVal"
+                    name="text1"
+                    class="form-control" />
+            </div>
+            <div class="form-group">
+                <asp:CheckBox
+                    Text="Is unsigned?"
+                    runat="server"
+                    ID="isUnsigned"
+                    name="checkbox" />
+            </div>
+            <div class="form-group">
+                <asp:Button
+                    OnClick="submitBtn_Click"
+                    ID="submitBtn"
+                    Text="Calculate"
+                    runat="server"
+                    type="submit"
+                    class="btn btn-success" />
+            </div>
+        </form>
+        <asp:RequiredFieldValidator ForeColor="Red"
+            ErrorMessage="Fill the first value!"
+            ControlToValidate="firstVal"
+            runat="server" />
+        <br />
+        <asp:CustomValidator ValidateEmptyText="true" 
+                OnServerValidate="secondValidator_ServerValidate" 
+            ID="secondValidator"
+            ForeColor="Red"
+            ErrorMessage="Incorrect data or empty field!"
+            ControlToValidate="secondVal"
+            runat="server" />
+        <br />
+        <asp:RequiredFieldValidator ForeColor="Red"
+            ErrorMessage="Choose operation!"
+            ControlToValidate="operation"
+            runat="server" />
+    </div>
+  
 </asp:Content>
+

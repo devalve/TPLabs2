@@ -1671,6 +1671,8 @@ pre code {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+    top: 0px;
+    left: 0px;
 }
 .col-xs-1,
 .col-xs-2,
@@ -2746,6 +2748,8 @@ textarea.form-control {
   display: block;
   margin-top: 10px;
   margin-bottom: 10px;
+    top: 0px;
+    left: 0px;
 }
 .radio.disabled label,
 .checkbox.disabled label,
@@ -6831,4 +6835,5 @@ button.close {
     display: none !important;
   }
 }
+
 /*# sourceMappingURL=bootstrap.css.map */
