@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
-        <div style="width:100%; height:100%; margin-left:40%" >
+        <div class="container" style="max-width:500px">
             <form>
                 <div class="form-group">
                     <label for="text">First Value</label>
@@ -39,7 +39,7 @@
                         name="text1"
                         class="form-control" />
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="margin-top:20px; margin-bottom:20px">
                     <asp:CheckBox
                         Text="Is unsigned?"
                         runat="server"
