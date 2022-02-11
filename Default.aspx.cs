@@ -18,7 +18,6 @@ namespace TPLabs2
             {
                 int first = int.Parse(firstVal.Text);
                 double second = double.Parse(secondVal.Text);
-                if (isUnsigned.Checked) first = (int)Convert.ToUInt32(firstVal.Text);
 
                 switch (operation.SelectedItem.Value)
                 {
@@ -64,6 +63,25 @@ namespace TPLabs2
                 args.IsValid = false;
             }
 
+        }
+
+        protected void mainMenu_MenuItemClick(object sender, MenuEventArgs e)
+        {
+            switch (e.Item.Value)
+            {
+                case "fv":
+                    mainMultiV.ActiveViewIndex = 0;
+                    break;
+                case "op":
+                    mainMultiV.ActiveViewIndex = 1;
+                    break;
+                case "sv":
+                    mainMultiV.ActiveViewIndex = 2;
+                    break;
+                default:
+                    mainMultiV.ActiveViewIndex = 0;
+                    break;
+            }
         }
     }
 }

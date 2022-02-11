@@ -15,6 +15,33 @@ namespace TPLabs2
     {
 
         /// <summary>
+        /// mainMenu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Menu mainMenu;
+
+        /// <summary>
+        /// mainMultiV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.MultiView mainMultiV;
+
+        /// <summary>
+        /// view1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View view1;
+
+        /// <summary>
         /// firstVal control.
         /// </summary>
         /// <remarks>
@@ -22,6 +49,15 @@ namespace TPLabs2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox firstVal;
+
+        /// <summary>
+        /// viewOp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View viewOp;
 
         /// <summary>
         /// operation control.
@@ -33,6 +69,15 @@ namespace TPLabs2
         protected global::System.Web.UI.WebControls.ListBox operation;
 
         /// <summary>
+        /// view2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View view2;
+
+        /// <summary>
         /// secondVal control.
         /// </summary>
         /// <remarks>
@@ -40,15 +85,6 @@ namespace TPLabs2
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox secondVal;
-
-        /// <summary>
-        /// isUnsigned control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox isUnsigned;
 
         /// <summary>
         /// submitBtn control.

@@ -10,8 +10,21 @@
     </head>
     <body>
         <div class="container" style="max-width:500px">
+            <asp:Menu ID="mainMenu" 
+                runat="server"
+                OnMenuItemClick="mainMenu_MenuItemClick"
+                cssClass="navbar">
+                <Items>
+                    <asp:MenuItem Text="First value" Value="fv"></asp:MenuItem>
+                    <asp:MenuItem Text="Operation" Value="op"></asp:MenuItem>
+                    <asp:MenuItem Text="Second value" Value="sv"></asp:MenuItem>
+                </Items>
+                
+            </asp:Menu>
             <form>
-                <div class="form-group">
+                <asp:MultiView ID="mainMultiV" runat="server" ActiveViewIndex="0">
+                    <asp:View runat="server" ID="view1">
+                         <div class="form-group">
                     <label for="text">First Value</label>
 
                     <asp:TextBox
@@ -20,7 +33,9 @@
                         name="text"
                         class="form-control" />
                 </div>
-                <div class="form-group">
+                    </asp:View>
+                    <asp:View runat="server" ID="viewOp">
+                           <div class="form-group">
                     <label for="text2">Operation</label>
                     <asp:ListBox
                         runat="server" ID="operation" name="text2" type="text" class="form-control">
@@ -30,6 +45,9 @@
                         <asp:ListItem Value="/" />
                     </asp:ListBox>
                 </div>
+                    </asp:View>
+                    <asp:View runat="server" ID="view2">
+                        
                 <div class="form-group">
 
                     <label for="text1">Second Value</label>
@@ -39,14 +57,8 @@
                         name="text1"
                         class="form-control" />
                 </div>
-                <div class="form-group" style="margin-top:20px; margin-bottom:20px">
-                    <asp:CheckBox
-                        Text="Is unsigned?"
-                        runat="server"
-                        ID="isUnsigned"
-                        name="checkbox" />
-                </div>
-                <div class="form-group">
+              
+                <div class="form-group" style="margin-top:20px">
                     <asp:Button
                         OnClick="submitBtn_Click"
                         ID="submitBtn"
@@ -55,6 +67,10 @@
                         type="submit"
                         class="btn btn-success" />
                 </div>
+                    </asp:View>
+                </asp:MultiView>
+               
+             
             </form>
             <asp:CustomValidator
                 ValidateEmptyText="true"
